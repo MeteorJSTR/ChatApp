@@ -1,0 +1,1 @@
+var Room = new Mongo.Collection('Room');
