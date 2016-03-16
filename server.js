@@ -2,11 +2,13 @@ Room = new Mongo.Collection('Room');
 
 Post = new Mongo.Collection('Post');
 
+
+
+
 /**
  * Posts has room
  */
 Post.helpers({
-
     room: function () {
         return Room.findOne(this.roomId);
     }
@@ -26,16 +28,7 @@ Room.helpers({
     }
 });
 
-lib = {
-  lists:function (src,key) {
-    var collection = [];
-    for (var i = 0; i < src.length; i++) {
-      var element = src[i];
-      collection.push(element[key]);
-    }
-    return collection;
-  }
-}
+
 
 Meteor.users.helpers({
 
@@ -45,13 +38,28 @@ Meteor.users.helpers({
      * @returns {Cursor}
      */
     rooms: function () {
-        return Room.find({userId:Meteor.userId()});
+        return Room.find({
+          ids:{
+            $in: [ Meteor.userId() ]
+          } 
+        });
     }
 
 });
 
 if (Meteor.isServer) {
- 	Meteor.publish('Room',function () {
+ 	lib = {
+    lists:function (src,key) {
+      var collection = [];
+      for (var i = 0; i < src.length; i++) {
+        var element = src[i];
+        collection.push(element[key]);
+      }
+      return collection;
+    }
+  }
+
+  Meteor.publish('Room',function () {
  		return Room.find();
  	});
 
@@ -61,12 +69,18 @@ if (Meteor.isServer) {
       var collection = [];
       for (var i = 0; i < user_names.length; i++) {
         u = user_names[i];
+
         var user = Meteor.users.findOne({
           username:u
         });
+        
+        collection.push(user);
       }
+      
       var ids = lib.lists(collection,'_id');
-      var names = lib.lists(collection,'_id').join('&');
+      ids.push(Meteor.userId());
+      console.log(ids);
+      var names = lib.lists(collection,'username').join(' & ') + ' & ' + Meteor.user().username;
       Room.insert({
           ids : ids,
           name : names
@@ -115,7 +129,7 @@ if (Meteor.isClient) {
 Meteor.subscribe('Room');
   Template.roomIndex.helpers({
   	'rooms':function () {
-  		return Room.find();
+  		return Meteor.user().rooms();
   	}
   });
 
