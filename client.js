@@ -6,7 +6,6 @@ if (Meteor.isClient) {
   var $$ = Dom7;
 
   // ...
-  var ptrContent = $$('.pull-to-refresh-content');
 
   Session.set('id', 1);
   Template.layout.helpers({

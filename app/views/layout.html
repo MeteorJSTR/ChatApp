@@ -38,9 +38,28 @@
           <!-- Page, "data-page" contains page name -->
           
             <!-- Scrollable page content -->
-            {{>layout}}
 
-          
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- Login buttons -->
+            {{> loginButtons }}
+            <!-- Login buttons -->
+
+
+            <!-- If somebody logged in  -->
+            {{#if currentUser}}
+
+                {{>layout}}
+
+            {{/if}}
+            <!-- If somebody logged in  -->
+
+
         </div>
         <!-- Bottom Toolbar-->
         
