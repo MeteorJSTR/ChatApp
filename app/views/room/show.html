@@ -1,36 +1,83 @@
 <template name="roomShow">
-  <div class="page">
-    <div class="page-content messages-content">
-      <div class="messages">
-        <!-- Date stamp -->
-        
-        <!-- Sent message (by default - green and on right side) -->
-        <div class="message message-sent">
-          <!-- Bubble with text -->
-          <div class="message-text">Hello</div>
+    <div class="page toolbar-fixed">
+        <div class="page-content messages-content">
+            <div class="page toolbar-fixed">
+
+                <!-- messages-content -->
+                <div class="page-content messages-content">
+                    <div class="messages">
+                            <div class="messages-date">Sunday, Feb 9 <span>12:58</span></div>
+                            <div class="message message-sent">
+                                <div class="message-text">Hello</div>
+                            </div>
+                            <div class="message message-sent">
+                                <div class="message-text">How are you?</div>
+                            </div>
+                            <div class="message message-received">
+                                <div class="message-name">Kate</div>
+                                <div class="message-text">I am fine, thanks</div>
+                                <div style="background-image:url(http://lorempixel.com/output/people-q-c-100-100-9.jpg)" class="message-avatar"></div>
+                            </div>
+                            <div class="messages-date">Sunday, Feb 3 <span>11:58</span></div>
+                            <div class="message message-sent">
+                                <div class="message-text">Nice photo?</div>
+                            </div>
+                            <div class="message message-sent message-pic">
+                                <div class="message-text"><img src="http://lorempixel.com/300/300/"></div>
+                                <div class="message-label">Delivered</div>
+                            </div>
+                            <div class="message message-received">
+                                <div class="message-name">Kate</div>
+                                <div class="message-text">Wow, awesome!</div>
+                                <div style="background-image:url(http://lorempixel.com/output/people-q-c-100-100-9.jpg)" class="message-avatar"></div>
+                            </div>
+                        </div>
+                    <br>
+                </div>
+                <!-- messagebar -->
+                <div class="toolbar messagebar">
+                    <div class="toolbar-inner">
+                        <textarea placeholder="Message"></textarea><a href="#" class="link">Send</a>
+                    </div>
+                </div>
+            </div>
         </div>
-   
-        <!-- Another sent message -->
-        <div class="message message-sent">
-          <!-- Bubble with text -->
-          <div class="message-text">How are you?</div>
-        </div>
-   
-        <!-- Received message (by default - grey on left side) -->
-        <div class="message message-received">
-          <!-- Sender name -->
-          <div class="message-name">Kate</div>
-   
-          <!-- Bubble with text -->
-          <div class="message-text">I am fine, thanks</div>
-   
-          
-        </div>
-   
-        
-   
-        
-      </div>
+
+
     </div>
-  </div>     
+
+  <!--<div class="page">-->
+    <!--<div class="page-content messages-content">-->
+      <!--<div class="messages">-->
+        <!--&lt;!&ndash; Date stamp &ndash;&gt;-->
+        <!---->
+        <!--&lt;!&ndash; Sent message (by default - green and on right side) &ndash;&gt;-->
+        <!--<div class="message message-sent">-->
+          <!--&lt;!&ndash; Bubble with text &ndash;&gt;-->
+          <!--<div class="message-text">Hello</div>-->
+        <!--</div>-->
+   <!---->
+        <!--&lt;!&ndash; Another sent message &ndash;&gt;-->
+        <!--<div class="message message-sent">-->
+          <!--&lt;!&ndash; Bubble with text &ndash;&gt;-->
+          <!--<div class="message-text">How are you?</div>-->
+        <!--</div>-->
+   <!---->
+        <!--&lt;!&ndash; Received message (by default - grey on left side) &ndash;&gt;-->
+        <!--<div class="message message-received">-->
+          <!--&lt;!&ndash; Sender name &ndash;&gt;-->
+          <!--<div class="message-name">Kate</div>-->
+   <!---->
+          <!--&lt;!&ndash; Bubble with text &ndash;&gt;-->
+          <!--<div class="message-text">I am fine, thanks</div>-->
+   <!---->
+          <!---->
+        <!--</div>-->
+   <!---->
+        <!---->
+   <!---->
+        <!---->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>     -->
 </template>
