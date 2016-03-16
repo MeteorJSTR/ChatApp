@@ -22,7 +22,11 @@
         <div class="navbar">
           <div class="navbar-inner">
             <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-            <div class="center sliding">Awesome App</div>
+            <div class="center sliding">Awesome Chat</div>
+
+            <div class="right">
+              {{>plus}}
+            </div>
             
           </div>
         </div>
@@ -31,6 +35,7 @@
           <!-- Page, "data-page" contains page name -->
           
             <!-- Scrollable page content -->
+
 
 
             <br>
@@ -46,7 +51,7 @@
             <!-- If somebody logged in  -->
             {{#if currentUser}}
 
-                {{>roomShow}}
+                {{>layout}}
 
             {{/if}}
             <!-- If somebody logged in  -->
@@ -54,13 +59,7 @@
 
         </div>
         <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner">
-            <!-- Toolbar links -->
-            <a href="#" class="link">Link 1</a>
-            <a href="#" class="link">Link 2</a>
-          </div>
-        </div>
+        
       </div>
     </div>
 </body>

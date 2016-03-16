@@ -6,5 +6,27 @@ if (Meteor.isClient) {
   var $$ = Dom7;
 
   // ...
-  var ptrContent = $$('.pull-to-refresh-content');
+
+  Session.set('id', 1);
+  Template.layout.helpers({
+  	'state':function (i) {
+  		return Session.get('id') == i;
+  	}
+  })
+
+  Template.roomIndex.onRendered(function () {
+	  $$('.plus').on('click',function () {
+      Session.set('id', 2);
+	  })
+   });
+
+  
+
+  Template.roomIndex.events({
+  	'rooms':function () {
+  		Meteor.subscribe('Room');
+  	}
+  })
+
+
 }
