@@ -5,16 +5,16 @@
 		      <div class="preloader"></div>
 		      <div class="pull-to-refresh-arrow"></div>
 		    </div>
-			<div class="list-block">
-			  <ul>
+            {{>createRoom}}
+			<div class="list-block inset">
+                <ul>
 			    <!-- Additional "swipeout" class on li -->
-			    
+			    {{#each rooms}}
 			    <li class="swipeout">
 			      <!-- Usual list element wrapped with "swipeout-content" -->
 			      <div class="swipeout-content">
 			        <!-- Your list element here -->
 			        <div class="item-content">
-			          <div class="item-media">...</div>
 			          <div class="item-inner">...</div>
 			        </div>
 			      </div>
@@ -25,7 +25,9 @@
 			        <!-- Swipeout actions links/buttons -->
 			        <a href="#">Delete</a>
 			      </div>
+			      
 			    </li>
+			    {{/each}}
 			    
 			  </ul>
 			</div>

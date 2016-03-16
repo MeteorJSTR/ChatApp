@@ -22,7 +22,11 @@
         <div class="navbar">
           <div class="navbar-inner">
             <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-            <div class="center sliding">Awesome App</div>
+            <div class="center sliding main">Chat</div>
+
+            <div class="right">
+              {{>plus}}
+            </div>
             
           </div>
         </div>
@@ -33,34 +37,48 @@
             <!-- Scrollable page content -->
 
 
+
             <br>
             <br>
             <br>
             <br>
             <br>
-            <!-- Login buttons -->
-            {{> loginButtons }}
-            <!-- Login buttons -->
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
 
 
             <!-- If somebody logged in  -->
             {{#if currentUser}}
 
-                {{>roomShow}}
+                {{>layout}}
 
             {{/if}}
             <!-- If somebody logged in  -->
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- Login buttons -->
+            {{> loginButtons }}
+            <!-- Login buttons -->
 
         </div>
         <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner">
-            <!-- Toolbar links -->
-            <a href="#" class="link">Link 1</a>
-            <a href="#" class="link">Link 2</a>
-          </div>
-        </div>
+        
       </div>
     </div>
 </body>
