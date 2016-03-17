@@ -1,0 +1,27 @@
+{
+  "servers": [
+    {
+      "host": "http://159.203.69.29",
+      "username": "root",
+      "password": "kalkandere",
+      "env": {}
+    }
+  ],
+
+  "setupMongo": true,
+
+  "setupNode": true,
+
+  "nodeVersion": "0.10.36",
+
+  "setupPhantom": true,
+
+  "enableUploadProgressBar": true,
+
+  "appName": "ChatApp",
+
+  "app": "/Applications/MAMP/htdocs/meteor/ChatApp",
+
+
+  "deployCheckWaitTime": 15
+}

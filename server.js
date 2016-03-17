@@ -8,7 +8,7 @@ if (Meteor.isServer) {
 
 		'create_room': function (peer_name) {
 
-			console.log(Meteor.users.findOne({username:username}));
+			console.log(Meteor.users.findOne({'username':username}));
 
 		}
 	})
