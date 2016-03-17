@@ -14,8 +14,16 @@ if (Meteor.isClient) {
   
 
 
-  Meteor.subscribe('Room');
-  Meteor.subscribe('Post',Session.get('roomId'));
+    Meteor.subscribe('Room');
+    Meteor.subscribe('Post',Session.get('roomId'));
+    Meteor.subscribe('User');
+
+    Tracker.autorun(function () {
+      if(Meteor.userId())
+      {
+        Session.set('id', 1);
+      }
+    });
   
 
 

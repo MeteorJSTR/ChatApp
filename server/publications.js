@@ -7,4 +7,7 @@ if(Meteor.isServer)
 	Meteor.publish('Post',function (id) {
 		return Post.find();
 	});	
+	Meteor.publish('User',function (id) {
+		return Meteor.users.find();
+	});	
 }

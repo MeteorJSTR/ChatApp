@@ -28,6 +28,11 @@ Template.layout.helpers({
     },
     'is_mine':function (i) {
       return i == Meteor.userId();
+    },
+    'username':function (i) {
+      var user = Meteor.users.findOne(i);
+
+      return user.username;
     }
 
   });
@@ -45,7 +50,7 @@ Template.layout.helpers({
 
     $$(document).on('click','.room',function () {
       var roomId = $$(this).data('id');
-      console.log(roomId);
+
       Session.set('id', 2);
       Session.set('roomId', roomId);
 	  })
